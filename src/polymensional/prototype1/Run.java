@@ -15,7 +15,6 @@ public class Run extends Activity {
     // Full screen.
     getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     
-    
     setContentView(R.layout.main);
   }
 }

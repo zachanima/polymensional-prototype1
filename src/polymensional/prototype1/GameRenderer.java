@@ -27,25 +27,25 @@ public class GameRenderer implements Renderer {
   public void draw2D(GL10 gl) {
     gl.glPushMatrix();
     gl.glTranslatef(2.0f, 2.0f, 0.0f);
-    gl.glScalef(10.0f, 10.0f, 10.0f);
+    gl.glScalef(1.0f, 1.0f, 1.0f);
     player.draw(gl);
     gl.glPopMatrix();
     
     gl.glPushMatrix();
     gl.glTranslatef(-2.0f, 2.0f, 0.0f);
-    gl.glScalef(10.0f, 10.0f, 10.0f);
+    gl.glScalef(1.0f, 1.0f, 1.0f);
     player.draw(gl);
     gl.glPopMatrix();
     
     gl.glPushMatrix();
     gl.glTranslatef(-2.0f, -2.0f, 0.0f);
-    gl.glScalef(10.0f, 10.0f, 10.0f);
+    gl.glScalef(1.0f, 1.0f, 1.0f);
     player.draw(gl);
     gl.glPopMatrix();
     
     gl.glPushMatrix();
     gl.glTranslatef(2.0f, -2.0f, 0.0f);
-    gl.glScalef(10.0f, 10.0f, 10.0f);
+    gl.glScalef(1.0f, 1.0f, 1.0f);
     player.draw(gl);
     gl.glPopMatrix();
   }

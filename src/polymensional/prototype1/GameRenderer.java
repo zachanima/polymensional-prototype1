@@ -12,14 +12,14 @@ public class GameRenderer implements Renderer {
     this.context = context;
     this.entity = new Entity();
   }
-
+  
   @Override
   public void onDrawFrame(GL10 gl) {
     entity.update();
     
     gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
     gl.glLoadIdentity();
-    gl.glTranslatef(0.0f, 0.0f, -10.0f);
+    gl.glTranslatef(0.0f, 0.0f, -5.0f);
     
     entity.draw(gl);
   }
@@ -40,7 +40,7 @@ public class GameRenderer implements Renderer {
 
   @Override
   public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-    entity.loadGLTexture(gl, this.context, R.drawable.ic_launcher);
+    entity.loadGLTexture(gl, this.context, R.drawable.ship);
     
     gl.glEnable(GL10.GL_TEXTURE_2D);
     gl.glShadeModel(GL10.GL_SMOOTH);
@@ -49,5 +49,4 @@ public class GameRenderer implements Renderer {
   
   private Context context;
   private Entity entity;
-  private int frames = 0;
 }

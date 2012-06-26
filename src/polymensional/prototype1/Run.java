@@ -16,7 +16,7 @@ public class Run extends Activity {
 
     gameView = new GameView(this);
     gameView.initialize();
-    setContentView(gameView);
+    setContentView(R.layout.main);
   }
 
 

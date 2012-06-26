@@ -34,9 +34,16 @@ public class GameRenderer implements Renderer {
 
   @Override
   public void onSurfaceChanged(GL10 gl, int width, int height) {
-    this.width = width;
-    this.height = height == 0 ? 1 : height; // Avoid division by 0.
-    perspective(gl);
+    if (height == 0) { height = 1; } // Avoid division by 0.
+
+    gl.glViewport(0, 0, width, height);
+    gl.glMatrixMode(GL10.GL_PROJECTION);
+    gl.glLoadIdentity();
+
+    GLU.gluPerspective(gl, 45.0f, (float)width / (float)height, 0.1f, 100.0f);
+
+    gl.glMatrixMode(GL10.GL_MODELVIEW);
+    gl.glLoadIdentity();
   }
 
   @Override
@@ -47,20 +54,7 @@ public class GameRenderer implements Renderer {
     gl.glShadeModel(GL10.GL_SMOOTH);
     gl.glClearColor(0.0f, 0.0f, 0.0f, 0.5f);
   }
-  
-  private void perspective(GL10 gl) {
-    gl.glViewport(0, 0, width, height);
-    gl.glMatrixMode(GL10.GL_PROJECTION);
-    gl.glLoadIdentity();
-
-    GLU.gluPerspective(gl, 45.0f, (float)width / (float)height, 0.1f, 100.0f);
-
-    gl.glMatrixMode(GL10.GL_MODELVIEW);
-    gl.glLoadIdentity();    
-  }
-  
+ 
   private Context context;
   private Player player;
-  private int width;
-  private int height;
 }

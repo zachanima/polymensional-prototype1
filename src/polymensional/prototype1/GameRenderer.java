@@ -10,20 +10,20 @@ import android.opengl.GLU;
 public class GameRenderer implements Renderer {
   public GameRenderer(Context context) {
     this.context = context;
-    this.ship = new Ship();
+    this.player = new Player();
   }
   
   public void update() {
-    ship.update();
+    player.update();
   }
   
   public void draw3D(GL10 gl) {
-    ship.draw(gl);
+    player.draw(gl);
   }
   
   @Override
   public void onDrawFrame(GL10 gl) {
-    ship.update();
+    update();
     
     gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
     gl.glLoadIdentity();
@@ -48,7 +48,7 @@ public class GameRenderer implements Renderer {
 
   @Override
   public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-    ship.load(gl, this.context, R.drawable.ship);
+    player.load(gl, this.context, R.drawable.ship);
     
     gl.glEnable(GL10.GL_TEXTURE_2D);
     gl.glShadeModel(GL10.GL_SMOOTH);
@@ -56,5 +56,5 @@ public class GameRenderer implements Renderer {
   }
   
   private Context context;
-  private Ship ship;
+  private Player player;
 }

@@ -29,7 +29,6 @@ public class GameRenderer implements Renderer {
     gl.glLoadIdentity();
     gl.glTranslatef(0.0f, 0.0f, -5.0f);
     
-    perspective(gl);
     draw3D(gl);
   }
 
@@ -37,6 +36,7 @@ public class GameRenderer implements Renderer {
   public void onSurfaceChanged(GL10 gl, int width, int height) {
     this.width = width;
     this.height = height == 0 ? 1 : height; // Avoid division by 0.
+    perspective(gl);
   }
 
   @Override

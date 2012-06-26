@@ -23,6 +23,12 @@ public class GameRenderer implements Renderer {
     gl.glTranslatef(0.0f, 0.0f, -10.0f);
     
     entity.draw(gl);
+
+    if (frames == 0) {
+      gl.glTranslatef(5.0f, 5.0f, 0.0f);
+      entity.draw(gl);
+      frames++;
+    }
   }
 
 
@@ -55,4 +61,5 @@ public class GameRenderer implements Renderer {
   
   private Context context;
   private Entity entity;
+  private int frames = 0;
 }

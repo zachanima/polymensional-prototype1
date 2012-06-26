@@ -48,7 +48,7 @@ public class GameRenderer implements Renderer {
 
   @Override
   public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-    ship.loadGLTexture(gl, this.context, R.drawable.ship);
+    ship.load(gl, this.context, R.drawable.ship);
     
     gl.glEnable(GL10.GL_TEXTURE_2D);
     gl.glShadeModel(GL10.GL_SMOOTH);

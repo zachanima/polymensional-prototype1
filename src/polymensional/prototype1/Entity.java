@@ -27,7 +27,7 @@ public class Entity {
     textureBuffer.position(0);
   }
   
-  public void loadGLTexture(GL10 gl, Context context, int resource) {
+  public void load(GL10 gl, Context context, int resource) {
     Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), resource);
     gl.glGenTextures(1, textures, 0);
     gl.glBindTexture(GL10.GL_TEXTURE_2D, textures[0]);

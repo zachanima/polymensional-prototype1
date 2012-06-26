@@ -65,7 +65,7 @@ public class Entity {
   
 
   private float r[] = { 0.0f, 0.0f };
-  private float v[] = { 20.0f, 30.0f };
+  private float v[] = { 0.02f, 0.03f };
   private FloatBuffer vertexBuffer;
   private FloatBuffer textureBuffer;
   private float vertices[] = {

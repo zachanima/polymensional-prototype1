@@ -38,6 +38,12 @@ public class Entity {
     
     bitmap.recycle();
   }
+  
+  
+  public void update() {
+    r[0] += v[0];
+    r[1] += v[1];
+  }
 
 
   public void draw(GL10 gl) {
@@ -59,6 +65,7 @@ public class Entity {
   
 
   private float r[] = { 0.0f, 0.0f };
+  private float v[] = { 0.2f, 0.3f };
   private FloatBuffer vertexBuffer;
   private FloatBuffer textureBuffer;
   private float vertices[] = {

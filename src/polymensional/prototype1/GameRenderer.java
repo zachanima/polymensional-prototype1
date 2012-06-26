@@ -26,25 +26,25 @@ public class GameRenderer implements Renderer {
   
   public void draw2D(GL10 gl) {
     gl.glPushMatrix();
-    gl.glTranslatef(10.0f, 10.0f, 0.0f);
+    gl.glTranslatef(1.0f, 1.0f, 0.0f);
     gl.glScalef(0.5f, 0.5f, 0.5f);
     player.draw(gl);
     gl.glPopMatrix();
     
     gl.glPushMatrix();
-    gl.glTranslatef(-10.0f, 10.0f, 0.0f);
+    gl.glTranslatef(-1.0f, 1.0f, 0.0f);
     gl.glScalef(0.5f, 0.5f, 0.5f);
     player.draw(gl);
     gl.glPopMatrix();
     
     gl.glPushMatrix();
-    gl.glTranslatef(-10.0f, -10.0f, 0.0f);
+    gl.glTranslatef(-1.0f, -1.0f, 0.0f);
     gl.glScalef(0.5f, 0.5f, 0.5f);
     player.draw(gl);
     gl.glPopMatrix();
     
     gl.glPushMatrix();
-    gl.glTranslatef(10.0f, -10.0f, 0.0f);
+    gl.glTranslatef(1.0f, -1.0f, 0.0f);
     gl.glScalef(0.5f, 0.5f, 0.5f);
     player.draw(gl);
     gl.glPopMatrix();
@@ -66,7 +66,7 @@ public class GameRenderer implements Renderer {
     gl.glMatrixMode(GL10.GL_PROJECTION);
     gl.glPushMatrix();
     gl.glLoadIdentity();
-    gl.glOrthox(0, 1280, 0, 720, -1, 1);
+    gl.glOrthof(0, viewport.get(2), 0, viewport.get(3), -1, 1);
     gl.glMatrixMode(GL10.GL_MODELVIEW);
     gl.glPushMatrix();
     gl.glLoadIdentity();

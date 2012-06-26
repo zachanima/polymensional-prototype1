@@ -47,6 +47,8 @@ public class Entity {
 
 
   public void draw(GL10 gl) {
+    gl.glTranslatef(r[0], r[1], 0.0f);
+    
     gl.glBindTexture(GL10.GL_TEXTURE_2D, textures[0]);
     
     gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
@@ -59,8 +61,6 @@ public class Entity {
     
     gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);
     gl.glDisableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
-
-    gl.glTranslatef(r[0], r[1], 0.0f);
   }
   
 

@@ -59,7 +59,9 @@ public class Entity {
     
     gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);
     gl.glDisableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
-    
+
+    r[0] += v[0];
+    r[1] += v[1];
     gl.glTranslatef(r[0], r[1], 0.0f);
   }
   

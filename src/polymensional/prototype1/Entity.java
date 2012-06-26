@@ -53,9 +53,12 @@ public class Entity {
     
     gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);
     gl.glDisableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
+    
+    gl.glTranslatef(r[0], r[1], 0.0f);
   }
   
 
+  private float r[] = { 0.0f, 0.0f };
   private FloatBuffer vertexBuffer;
   private FloatBuffer textureBuffer;
   private float vertices[] = {

@@ -19,20 +19,17 @@ public class Run extends Activity {
     setContentView(gameView);
   }
 
-
   @Override
   protected void onResume() {
     super.onResume();
     gameView.onResume();
   }
 
-
   @Override
   protected void onPause() {
     super.onPause();
     gameView.onPause();
   }
-  
 
   private GameView gameView;
 }

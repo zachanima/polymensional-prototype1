@@ -27,7 +27,6 @@ public class Entity {
     textureBuffer.position(0);
   }
   
-  
   public void loadGLTexture(GL10 gl, Context context, int resource) {
     Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), resource);
     gl.glGenTextures(1, textures, 0);
@@ -39,12 +38,10 @@ public class Entity {
     bitmap.recycle();
   }
   
-  
   public void update() {
     r[0] += v[0];
     r[1] += v[1];
   }
-
 
   public void draw(GL10 gl) {
     gl.glTranslatef(r[0], r[1], 0.0f);
@@ -63,7 +60,6 @@ public class Entity {
     gl.glDisableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
   }
   
-
   private float r[] = { 0.0f, 0.0f };
   private float v[] = { 0.002f, 0.003f };
   private FloatBuffer vertexBuffer;

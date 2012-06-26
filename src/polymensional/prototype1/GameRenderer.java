@@ -13,7 +13,6 @@ public class GameRenderer implements Renderer {
     this.entity = new Entity();
   }
 
-
   @Override
   public void onDrawFrame(GL10 gl) {
     entity.update();
@@ -24,7 +23,6 @@ public class GameRenderer implements Renderer {
     
     entity.draw(gl);
   }
-
 
   @Override
   public void onSurfaceChanged(GL10 gl, int width, int height) {
@@ -40,7 +38,6 @@ public class GameRenderer implements Renderer {
     gl.glLoadIdentity();
   }
 
-
   @Override
   public void onSurfaceCreated(GL10 gl, EGLConfig config) {
     entity.loadGLTexture(gl, this.context, R.drawable.ic_launcher);
@@ -49,7 +46,6 @@ public class GameRenderer implements Renderer {
     gl.glShadeModel(GL10.GL_SMOOTH);
     gl.glClearColor(0.0f, 0.0f, 0.0f, 0.5f);
   }
-  
   
   private Context context;
   private Entity entity;

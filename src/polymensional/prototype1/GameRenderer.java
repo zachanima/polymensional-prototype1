@@ -25,7 +25,6 @@ public class GameRenderer implements Renderer {
   }
   
   public void draw2D(GL10 gl) {
-    gl.glTranslatef(100.0f, 100.0f, 0.0f);
     gl.glScalef(100.0f, 100.0f, 100.0f);
     player.draw(gl);
   }

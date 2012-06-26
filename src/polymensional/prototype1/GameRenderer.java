@@ -24,11 +24,9 @@ public class GameRenderer implements Renderer {
     
     entity.draw(gl);
 
-    if (frames == 0) {
-      gl.glTranslatef(2.0f, 2.0f, 0.0f);
-      entity.draw(gl);
-      frames++;
-    }
+    gl.glTranslatef((float)frames, 2.0f, 0.0f);
+    entity.draw(gl);
+    frames++;
   }
 
 

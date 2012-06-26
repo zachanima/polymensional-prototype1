@@ -49,13 +49,11 @@ public class GameRenderer implements Renderer {
 
   @Override
   public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-    // entity.loadGLTexture(gl, this.context, R.drawable.ic_launcher);
+    entity.loadGLTexture(gl, this.context, R.drawable.ic_launcher);
     
     gl.glEnable(GL10.GL_TEXTURE_2D);
     gl.glShadeModel(GL10.GL_SMOOTH);
     gl.glClearColor(0.0f, 0.0f, 0.0f, 0.5f);
-    gl.glEnable(GL10.GL_BLEND);
-    gl.glBlendFunc(GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
   }
   
   

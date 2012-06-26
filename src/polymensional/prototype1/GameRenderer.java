@@ -1,7 +1,10 @@
 package polymensional.prototype1;
 
+import java.nio.IntBuffer;
+
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
+import javax.microedition.khronos.opengles.GL11;
 
 import android.content.Context;
 import android.opengl.GLSurfaceView.Renderer;
@@ -21,6 +24,12 @@ public class GameRenderer implements Renderer {
     player.draw(gl);
   }
   
+  public void draw2D(GL10 gl) {
+    gl.glTranslatef(100.0f, 100.0f, 0.0f);
+    gl.glScalef(100.0f, 100.0f, 100.0f);
+    player.draw(gl);
+  }
+  
   @Override
   public void onDrawFrame(GL10 gl) {
     update();
@@ -30,6 +39,24 @@ public class GameRenderer implements Renderer {
     gl.glTranslatef(0.0f, 0.0f, -5.0f);
     
     draw3D(gl);
+    
+    // Enable 2D.
+    IntBuffer viewport = IntBuffer.allocate(4);
+    gl.glGetIntegerv(GL11.GL_VIEWPORT, viewport);
+    gl.glMatrixMode(GL10.GL_PROJECTION);
+    gl.glPushMatrix();
+    gl.glLoadIdentity();
+    gl.glOrthox(0, viewport.get(2), 0, viewport.get(3), -1, 1);
+    gl.glMatrixMode(GL10.GL_MODELVIEW);
+    gl.glPushMatrix();
+    gl.glLoadIdentity();
+    draw2D(gl);
+    
+    // Disable 2D.
+    gl.glMatrixMode(GL10.GL_PROJECTION);
+    gl.glPopMatrix();
+    gl.glMatrixMode(GL10.GL_MODELVIEW);
+    gl.glPopMatrix();
   }
 
   @Override

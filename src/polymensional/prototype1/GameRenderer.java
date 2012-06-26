@@ -19,7 +19,7 @@ public class GameRenderer implements Renderer {
     entity.update();
     gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
     gl.glLoadIdentity();
-    gl.glTranslatef(0.0f, 0.0f, -20.0f);
+    gl.glTranslatef(0.0f, 0.0f, -10.0f);
     
     entity.draw(gl);
   }

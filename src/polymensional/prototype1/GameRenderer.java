@@ -11,7 +11,7 @@ public class GameRenderer implements Renderer {
   public GameRenderer(Context context) {
     this.context = context;
     this.player = new Player();
-    this.element = new Element(320.0f, 100.0f, 1280.0f / 2.0f, 720.0f / 2.0f);
+    this.element = new Element(640.0f, 360.0f, 1280.0f / 2.0f, 720.0f / 2.0f);
   }
   
   public void update() {

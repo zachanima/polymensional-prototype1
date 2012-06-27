@@ -34,6 +34,7 @@ public class Element {
   }
 
   public void draw(GL10 gl) {
+    gl.glPushMatrix();
     gl.glTranslatef(x, y, 0.0f);
     
     gl.glBindTexture(GL10.GL_TEXTURE_2D, textures[0]);
@@ -48,6 +49,7 @@ public class Element {
     
     gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);
     gl.glDisableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
+    gl.glPopMatrix();
   }
   
   private float x;

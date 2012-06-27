@@ -44,6 +44,7 @@ public class Entity {
   }
 
   public void draw(GL10 gl) {
+    gl.glPushMatrix();
     gl.glTranslatef(r[0], r[1], 0.0f);
     
     gl.glBindTexture(GL10.GL_TEXTURE_2D, textures[0]);
@@ -58,6 +59,7 @@ public class Entity {
     
     gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);
     gl.glDisableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
+    gl.glPopMatrix();
   }
   
   private float r[] = { 0.0f, 0.0f };

@@ -7,7 +7,7 @@ import java.nio.FloatBuffer;
 import javax.microedition.khronos.opengles.GL10;
 
 public class Element {
-  public Element(int x, int y, int w, int h) {
+  public Element(float x, float y, float w, float h) {
     this.x = x;
     this.y = y;
     this.w = w;

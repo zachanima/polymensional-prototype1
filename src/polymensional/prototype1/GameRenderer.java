@@ -66,7 +66,7 @@ public class GameRenderer implements Renderer {
     gl.glMatrixMode(GL10.GL_PROJECTION);
     gl.glPushMatrix();
     gl.glLoadIdentity();
-    gl.glOrthox(0, 1280, 0, -720, -1, 1);
+    gl.glOrthox(0, 1280, 0, 720, -1, 1);
     gl.glMatrixMode(GL10.GL_MODELVIEW);
     gl.glPushMatrix();
     gl.glLoadIdentity();

@@ -1,10 +1,7 @@
 package polymensional.prototype1;
 
-import java.nio.IntBuffer;
-
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
-import javax.microedition.khronos.opengles.GL11;
 
 import android.content.Context;
 import android.opengl.GLSurfaceView.Renderer;
@@ -20,34 +17,8 @@ public class GameRenderer implements Renderer {
     player.update();
   }
   
-  public void draw3D(GL10 gl) {
+  public void draw(GL10 gl) {
     player.draw(gl);
-  }
-  
-  public void draw2D(GL10 gl) {
-    gl.glPushMatrix();
-    gl.glTranslatef(3.0f, 2.0f, 0.0f);
-    gl.glScalef(1.0f, 1.0f, 1.0f);
-    player.draw(gl);
-    gl.glPopMatrix();
-    
-    gl.glPushMatrix();
-    gl.glTranslatef(-1.0f, 2.0f, 0.0f);
-    gl.glScalef(1.0f, 1.0f, 1.0f);
-    player.draw(gl);
-    gl.glPopMatrix();
-    
-    gl.glPushMatrix();
-    gl.glTranslatef(-1.0f, -2.0f, 0.0f);
-    gl.glScalef(1.0f, 1.0f, 1.0f);
-    player.draw(gl);
-    gl.glPopMatrix();
-    
-    gl.glPushMatrix();
-    gl.glTranslatef(3.0f, -2.0f, 0.0f);
-    gl.glScalef(1.0f, 1.0f, 1.0f);
-    player.draw(gl);
-    gl.glPopMatrix();
   }
   
   @Override
@@ -58,25 +29,7 @@ public class GameRenderer implements Renderer {
     gl.glLoadIdentity();
     gl.glTranslatef(0.0f, 0.0f, -5.0f);
     
-    draw3D(gl);
-    
-    // Enable 2D.
-    IntBuffer viewport = IntBuffer.allocate(4);
-    gl.glGetIntegerv(GL11.GL_VIEWPORT, viewport);
-    gl.glMatrixMode(GL10.GL_PROJECTION);
-    gl.glPushMatrix();
-    gl.glLoadIdentity();
-    gl.glOrthox(0, 1280, 0, 720, -1, 1);
-    gl.glMatrixMode(GL10.GL_MODELVIEW);
-    gl.glPushMatrix();
-    gl.glLoadIdentity();
-    draw2D(gl);
-    
-    // Disable 2D.
-    gl.glMatrixMode(GL10.GL_PROJECTION);
-    gl.glPopMatrix();
-    gl.glMatrixMode(GL10.GL_MODELVIEW);
-    gl.glPopMatrix();
+    draw(gl);
   }
 
   @Override

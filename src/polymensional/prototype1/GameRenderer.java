@@ -42,7 +42,7 @@ public class GameRenderer implements Renderer {
     gl.glMatrixMode(GL10.GL_PROJECTION);
     gl.glLoadIdentity();
 
-    GLU.gluPerspective(gl, 45.0f, (float)width / (float)height, 0.1f, 1000.0f);
+    GLU.gluPerspective(gl, 45.0f, (float)width / (float)height, 0.1f, 10000.0f);
 
     gl.glMatrixMode(GL10.GL_MODELVIEW);
     gl.glLoadIdentity();

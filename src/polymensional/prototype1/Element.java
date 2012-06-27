@@ -13,10 +13,10 @@ public class Element {
     this.w = w;
     this.h = h;
     float vertices[] = {
-        x, y, 0.0f,
-        x, h, 0.0f,
-        w, y, 0.0f,
-        w, h, 0.0f
+        x,   -y,   0.0f,
+        x,   -y-h, 0.0f,
+        x+w, -y,   0.0f,
+        x+w, -y-h, 0.0f
     };
     this.vertices = vertices;
     
@@ -35,6 +35,7 @@ public class Element {
 
   public void draw(GL10 gl) {
     gl.glPushMatrix();
+    gl.glTranslatef(0.0f, 0.0f, -20.0f);
     gl.glTranslatef(x, y, 0.0f);
     
     gl.glBindTexture(GL10.GL_TEXTURE_2D, textures[0]);

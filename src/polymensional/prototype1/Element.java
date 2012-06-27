@@ -8,10 +8,6 @@ import javax.microedition.khronos.opengles.GL10;
 
 public class Element {
   public Element(float x, float y, float w, float h) {
-    this.x = x;
-    this.y = y;
-    this.w = w;
-    this.h = h;
     float vertices[] = {
         x,   -y,   0.0f,
         x,   -y-h, 0.0f,
@@ -52,11 +48,7 @@ public class Element {
     gl.glDisableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
     gl.glPopMatrix();
   }
-  
-  private float x;
-  private float y;
-  private float w;
-  private float h;
+
   private FloatBuffer vertexBuffer;
   private FloatBuffer textureBuffer;
   private float vertices[] = {

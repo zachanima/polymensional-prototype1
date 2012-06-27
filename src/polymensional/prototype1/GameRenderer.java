@@ -11,7 +11,7 @@ public class GameRenderer implements Renderer {
   public GameRenderer(Context context) {
     this.context = context;
     this.player = new Player();
-    this.element = new Element(0.0f, 360.0f, 360.0f, 360.0f);
+    this.button = new Button(0.0f, 360.0f, 360.0f, 360.0f);
   }
   
   public void update() {
@@ -20,7 +20,7 @@ public class GameRenderer implements Renderer {
   
   public void draw(GL10 gl) {
     player.draw(gl);
-    element.draw(gl);
+    button.draw(gl);
   }
   
   @Override
@@ -59,5 +59,5 @@ public class GameRenderer implements Renderer {
  
   private Context context;
   private Player player;
-  private Element element;
+  private Button button;
 }

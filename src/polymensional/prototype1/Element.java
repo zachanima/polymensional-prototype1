@@ -37,7 +37,6 @@ public class Element {
     gl.glPushMatrix();
     gl.glTranslatef(-0.0f, 0.0f, -860.0f);
     gl.glTranslatef(-640.0f, 360.0f, 0.0f);
-    gl.glTranslatef(0.0f, y, 0.0f);
     
     gl.glBindTexture(GL10.GL_TEXTURE_2D, textures[0]);
     

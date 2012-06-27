@@ -41,9 +41,9 @@ public class Element {
     
     gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
     gl.glEnableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
-    
-    gl.glFrontFace(GL10.GL_CW);
+
     gl.glColor4f(0.0f, 1.0f, 0.0f, 0.5f);
+    gl.glFrontFace(GL10.GL_CW);
     gl.glVertexPointer(3, GL10.GL_FLOAT, 0, vertexBuffer);
     gl.glTexCoordPointer(2, GL10.GL_FLOAT, 0, textureBuffer);
     gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 0, vertices.length / 3);
